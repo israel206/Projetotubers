@@ -1,0 +1,30 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    // extensões do prettier
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    // plugins do prettier
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    // regras do prettier
+    "rules": {
+        "prettier/prettier":"error"
+    }
+}
