@@ -25,6 +25,7 @@ export default function Home({ data }) {
 
 export async function getStaticProps() {
   // colocando imagem statics
+  // das imgens/videos
   const data = [
     {
       id: 1,
