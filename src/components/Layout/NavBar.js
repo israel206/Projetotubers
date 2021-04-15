@@ -149,6 +149,9 @@ function NavBar() {
         </Box>
       </Box>
       
+      {/* 3 divisor, dividindo por uma linha reta */}
+      <Divider />
+
     </Box>
   );
 
