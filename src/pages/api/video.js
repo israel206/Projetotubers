@@ -1,30 +1,10 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-// EndPoint
-// EndPoint para chamada 
-// export default function handler(req, res) {
-//   const { method } = req;
-//   switch (method) {
-//     case 'GET':
-//       // Get  data from your database
-//       // Receber nossa imagem e outros pelo EndPoint
-//       // inserir no banco de dados MONGODB_DB
-
-//       res.status(200).json({ msg: method });
-//       break;
-//     // case 'PUT':
-//     //   // Update or create data in your database
-//     //   res.status(200).josn({ msg: method });
-//     //   break;
-//     default:
-//       res.setHeader('Allow', ['GET', 'PUT']);
-//       res.status(405).end(`Method ${method} Not Allowed`);
-//   }
-// }
-
+// Outras aplicações podem consumir estes dados
 import { ObjectId } from 'mongodb';
 import nc from 'next-connect';
+
 import connectToDatabase from 'src/utils/mongodb';
 import upload from 'src/utils/upload';
+
 import jwt from 'next-auth/jwt';
 
 const secret = process.env.JWT_SECRET;
@@ -40,9 +20,10 @@ const handler = nc()
     const token = await jwt.getToken({ req, secret });
 
     if (token) {
+      // pegando as informações
       const { db } = await connectToDatabase();
       const collection = db.collection('videos');
-
+      // inserido
       await collection.insertOne({
         title,
         authorId: ObjectId(authorId),

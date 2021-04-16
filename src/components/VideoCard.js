@@ -30,7 +30,7 @@ function VideoCard({ item }) {
       <img alt={item.title} src={item.thumb} className={classes.img} />
       <Box display="flex" mt="1">
         {/* box para esquerda */}
-        <Box>
+        <Box mr={2}>
           <Avatar alt={item.autorName} src={item.autorAvatar}>
             SS
           </Avatar>

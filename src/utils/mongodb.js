@@ -5,6 +5,7 @@ import { MongoClient } from 'mongodb';
 const uri = process.env.MONGODB_URI;
 const dbName = process.env.MONGODB_DB;
 
+// variado
 let cachedDb;
 let cachedClient;
 

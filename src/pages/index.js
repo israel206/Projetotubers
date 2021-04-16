@@ -4,6 +4,7 @@ import { Box, Grid } from '@material-ui/core';
 // fazendo a importação do components
 import Layout from '../components/Layout';
 import VideoCard from 'src/components/VideoCard';
+import { getVideos } from 'src/database/getVideos';
 
 export default function Home({ data }) {
 
@@ -26,52 +27,22 @@ export default function Home({ data }) {
 export async function getStaticProps() {
   // colocando imagem statics
   // das imgens/videos
-  const data = [
-    {
-      id: 1,
-      title: 'NEXT.JS; O FRAMEWORK QUE VOCÊ DEVERIA CONHECER [PARTE 1]',
-      authorId: 1,
-      authorName: 'Israel Silva',
-      authorAvatar: 'avatarUrl',
-      views: 10,
-      thumb: '/thumbs/next01.png',
-      videoUrl: 'url',
-      updatedAt: new Date(),
-    },
-    {
-      id: 2,
-      title: 'NEXT.JS; O FRAMEWORK QUE VOCÊ DEVERIA CONHECER [PARTE 2]',
-      authorId: 1,
-      authorName: 'Israel Silva',
-      authorAvatar: 'avatarUrl',
-      views: 10,
-      thumb: '/thumbs/next02.png',
-      videoUrl: 'url',
-      updatedAt: new Date(),
-    },
-    {
-      id: 3,
-      title: 'NEXT.JS; O FRAMEWORK QUE VOCÊ DEVERIA CONHECER [PARTE 3]',
-      authorId: 1,
-      authorName: 'Israel Silva',
-      authorAvatar: 'avatarUrl',
-      views: 10,
-      thumb: '/thumbs/next03.png',
-      videoUrl: 'url',
-      updatedAt: new Date(),
-    },
-    {
-      id: 4,
-      title: 'NEXT.JS; O FRAMEWORK QUE VOCÊ DEVERIA CONHECER [PARTE 3]',
-      authorId: 1,
-      authorName: 'Israel Silva',
-      authorAvatar: 'avatarUrl',
-      views: 10,
-      thumb: '/thumbs/next03.png',
-      videoUrl: 'url',
-      updatedAt: new Date(),
-    },
-  ];
+  // const data = [
+  //   {
+  //     id: 1,
+  //     title: 'NEXT.JS; O FRAMEWORK QUE VOCÊ DEVERIA CONHECER [PARTE 1]',
+  //     authorId: 1,
+  //     authorName: 'Israel Silva',
+  //     authorAvatar: 'avatarUrl',
+  //     views: 10,
+  //     thumb: '/thumbs/next01.png',
+  //     videoUrl: 'url',
+  //     updatedAt: new Date(),
+  //   },
+  // ];
+
+  // pegando os dados do banco de dados
+  const data = await getVideos();
 
   return {
     props: {
