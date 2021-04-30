@@ -35,6 +35,7 @@ This project was developed using the following technologies:
   - [Html](https://www.w3schools.com/html/)
   - [Css](https://www.w3schools.com/css/default.asp)
   - [JavaScript](https://www.w3schools.com/js/default.asp)
+  - [React.js](https://pt-br.reactjs.org/docs/getting-started.html)
 
 ## 👨‍💻 Computer: How to run
 
